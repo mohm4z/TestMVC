@@ -42,11 +42,21 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -5122,6 +5132,16 @@
     <Content Include="App_Themes\Theme\css\animate.css" />
     <Content Include="App_Themes\Theme\css\MainCss.css" />
     <Content Include="Global.asax" />
+    <Content Include="Models\MEFDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MEFDB.edmx</DependentUpon>
+      <LastGenOutput>MEFDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MEFDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MEFDB.edmx</DependentUpon>
+      <LastGenOutput>MEFDB.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -5130,6 +5150,195 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CERTIFICATE_TYPES.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CMITS_FIL_PERD.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COMMITTEES.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COMMITTEES_MEMBERS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COMMITTEES_RANKS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COMM_MEM_PROV.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COMM_MEM_RANKS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COURSES.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COURSES_EXCEPTION_TYPE.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DEDUCTING_DECISIONS_TYPES.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DEPARTMENTS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DIVISIONS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DT_DEPARTMENTS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDUCATION.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EMPLOYEES.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EMP_PERMS_VU.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FIELD_SERVICE.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FILTRATION_PERIODS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FILT_PER_RANK.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GROUPS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GROUPS_PERMISSIONS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LABORATORY_ANALYSIS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LT_CITIES.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LT_MFP_TYPES.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LT_NO_FILT_REASON.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LT_PROCEDURES_TYPES.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LT_PROVNCITY.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MEFDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MEFDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MEFDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MEFDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MEFDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MFP.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MFP_PROCEDURES.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSGS_SYS_D.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSGS_SYS_H.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NO_FILT_REQ.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\POINTS_TYPE.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PROCEDURES_TYPE.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PROMOTIONS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PROMOTION_TESTS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QUALIFICATIONS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\REQUESTS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\REQUESTS_STAGES.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\REQUESTS_STATUSES.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\REQUEST_PROCEDURES.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SECTIONS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SENIORITY.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SERVICE_FILE.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\STATUSES.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ST_MRANK.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ST_MULT_UNIT.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ST_REQ_COMMITTEES.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ST_TRANS_TYPES.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ULP_DEPARTMENTS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ULP_DEPARTMENTS_VU.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ULP_EMPLOYEES.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USERS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USERS_GROUPS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USERS_PERMISSIONS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USERS_SETTINGS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VACANT_JOBS.cs">
+      <DependentUpon>MEFDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -5435,6 +5644,13 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <EntityDeploy Include="Models\MEFDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MEFDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MEFDB.edmx.diagram">
+      <DependentUpon>MEFDB.edmx</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5446,7 +5662,9 @@
     <Folder Include="App_Data\" />
     <Folder Include="App_Themes\Template\assets\apps\img\" />
     <Folder Include="App_Themes\Template\assets\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

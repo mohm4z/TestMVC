@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4dd2c256170c4c38b225ccb700694b1f" Name="Diagram1">
+        <EntityTypeShape EntityType="MEFDBM.CERTIFICATE_TYPES" Width="1.5" PointX="9" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.CMITS_FIL_PERD" Width="1.5" PointX="3" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.COMM_MEM_PROV" Width="1.5" PointX="18.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.COMM_MEM_RANKS" Width="1.5" PointX="18.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.COMMITTEES" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.COMMITTEES_MEMBERS" Width="1.5" PointX="16" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.COMMITTEES_RANKS" Width="1.5" PointX="1.5" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.COURSES" Width="1.5" PointX="11.25" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.COURSES_EXCEPTION_TYPE" Width="1.5" PointX="9" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.DEDUCTING_DECISIONS_TYPES" Width="1.5" PointX="9" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.DEPARTMENTS" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.DIVISIONS" Width="1.5" PointX="3.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.DT_DEPARTMENTS" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.EDUCATION" Width="1.5" PointX="11.25" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.EMPLOYEES" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.FIELD_SERVICE" Width="1.5" PointX="8.25" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.FILT_PER_RANK" Width="1.5" PointX="3" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.FILTRATION_PERIODS" Width="1.5" PointX="0.75" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.GROUPS" Width="1.5" PointX="13.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.GROUPS_PERMISSIONS" Width="1.5" PointX="16" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.LABORATORY_ANALYSIS" Width="1.5" PointX="8.25" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.LT_CITIES" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.LT_MFP_TYPES" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.LT_PROVNCITY" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.MFP" Width="1.5" PointX="3.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.MFP_PROCEDURES" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.MSGS_SYS_D" Width="1.5" PointX="3.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.MSGS_SYS_H" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.NO_FILT_REQ" Width="1.5" PointX="8.25" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.POINTS_TYPE" Width="1.5" PointX="5.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.PROCEDURES_TYPE" Width="1.5" PointX="5.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.PROMOTION_TESTS" Width="1.5" PointX="8.25" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.PROMOTIONS" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.QUALIFICATIONS" Width="1.5" PointX="11.25" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.REQUEST_PROCEDURES" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.REQUESTS" Width="1.5" PointX="6" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.REQUESTS_STAGES" Width="1.5" PointX="3.75" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.REQUESTS_STATUSES" Width="1.5" PointX="3.75" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.SECTIONS" Width="1.5" PointX="6" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.SENIORITY" Width="1.5" PointX="8.25" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.SERVICE_FILE" Width="1.5" PointX="11.25" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.ST_MRANK" Width="1.5" PointX="16" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.ST_MULT_UNIT" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.ST_REQ_COMMITTEES" Width="1.5" PointX="14.25" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.sysdiagrams" Width="1.5" PointX="18.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.ULP_DEPARTMENTS" Width="1.5" PointX="1.5" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.ULP_EMPLOYEES" Width="1.5" PointX="18.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.USERS" Width="1.5" PointX="13.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.USERS_GROUPS" Width="1.5" PointX="16" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.USERS_PERMISSIONS" Width="1.5" PointX="16" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.USERS_SETTINGS" Width="1.5" PointX="16" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.VACANT_JOBS" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.LT_PROCEDURES_TYPES" Width="1.5" PointX="20.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.LT_NO_FILT_REASON" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.ST_TRANS_TYPES" Width="1.5" PointX="20.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.STATUSES" Width="1.5" PointX="20.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.EMP_PERMS_VU" Width="1.5" PointX="20.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEFDBM.ULP_DEPARTMENTS_VU" Width="1.5" PointX="16.75" PointY="20.75" IsExpanded="true" />
+        <AssociationConnector Association="MEFDBM.FK_EDUCATION_CERTIFICATE_TYPES" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_QUALIFICATIONS_CERTIFICATE_TYPES" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_CMITS_FIL_PERD_COMMITTEES" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_CMITS_FIL_PERD_FILTRATION_PERIODS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_COMM_MEM_PROV_COMMITTEES_MEMBERS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_COMM_MEM_RANKS_COMMITTEES_MEMBERS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_COMM_MEM_RANKS_ST_MRANK" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_COMMITTEES_COMMITTEES_RANKS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_COMMITTEES_MEMBERS_COMMITTEES" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_COMMITTEES_ULP_DEPARTMENTS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_ST_REQ_COMMITTEES_COMMITTEES" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_COMMITTEES_MEMBERS_COMMITTEES_RANKS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_COMMITTEES_MEMBERS_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_COURSES_COURSES_EXCEPTION_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_COURSES_REQUESTS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_SERVICE_FILE_DEDUCTING_DECISIONS_TYPES" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_DIVISIONS_ULP_DEPARTMENTS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_SECTIONS_DIVISIONS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_FIELD_SERVICE_REQUESTS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_FILT_PER_RANK_FILTRATION_PERIODS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_REQUESTS_FILTRATION_PERIODS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_GROUPS_PERMISSIONS_GROUPS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_USERS_GROUPS_GROUPS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_LABORATORY_ANALYSIS_REQUESTS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_LT_CITIES_LT_PROVNCITY23" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_ST_MULT_UNIT_LT_CITIES" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_ST_MULT_UNIT_LT_PROVNCITY" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_MFP_MFP" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_NO_FILT_REQ_REQUESTS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_REQUEST_PROCEDURES_PROCEDURES_TYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_PROMOTION_TESTS_REQUESTS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_QUALIFICATIONS_REQUESTS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_REQUESTS_REQUESTS_STAGES" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_REQUESTS_REQUESTS_STATUSES" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_SENIORITY_REQUESTS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_SERVICE_FILE_REQUESTS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_ST_REQ_COMMITTEES_REQUESTS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_USERS_GROUPS_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_USERS_PERMISSIONS_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="MEFDBM.FK_USERS_SETTINGS_USERS" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
