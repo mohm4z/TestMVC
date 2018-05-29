@@ -5119,6 +5119,7 @@
     <Content Include="App_Themes\Template\assets\pages\scripts\ui-toastr.min.js" />
     <Content Include="App_Themes\Template\assets\pages\scripts\ui-tree.min.js" />
     <Content Include="App_Themes\Template\assets\pages\scripts\widgets.min.js" />
+    <Content Include="App_Themes\Theme\css\MainStyle.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -5440,7 +5441,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="App_Themes\Template\assets\apps\img\" />
     <Folder Include="App_Themes\Template\assets\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
-    <Folder Include="App_Themes\Theme\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Shared\" />
