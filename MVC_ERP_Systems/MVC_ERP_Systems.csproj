@@ -5430,6 +5430,8 @@
     <Content Include="App_Themes\Template\assets\layouts\layout7\img\Thumbs.db" />
     <Content Include="App_Themes\Template\assets\pages\media\blog\Thumbs.db" />
     <Content Include="App_Themes\Template\assets\pages\media\pages\Thumbs.db" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5443,7 +5445,6 @@
     <Folder Include="App_Themes\Template\assets\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

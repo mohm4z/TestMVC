@@ -11,12 +11,12 @@ namespace MVC_ERP_Systems
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Scripts/jquery").Include(
-                "~/Scripts/Lib/jquery/jquery-{version}.js"
+                "~/App_Themes/Template/assets/global/plugins/jquery-{version}.js"
             ));
 
-            bundles.Add(new StyleBundle("~/Style/css").Include(
-                 "~/Scripts/Lib/jquery/jquery-{version}.js"
-                ));
+            //bundles.Add(new StyleBundle("~/Style/css").Include(
+            //     "~/Scripts/Lib/jquery/jquery-{version}.js"
+            //    ));
         }
     }
 }
