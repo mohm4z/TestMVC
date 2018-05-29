@@ -5126,6 +5126,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -5432,6 +5433,7 @@
     <Content Include="App_Themes\Template\assets\pages\media\pages\Thumbs.db" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5443,7 +5445,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="App_Themes\Template\assets\apps\img\" />
     <Folder Include="App_Themes\Template\assets\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
