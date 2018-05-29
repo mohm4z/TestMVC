@@ -5119,7 +5119,8 @@
     <Content Include="App_Themes\Template\assets\pages\scripts\ui-toastr.min.js" />
     <Content Include="App_Themes\Template\assets\pages\scripts\ui-tree.min.js" />
     <Content Include="App_Themes\Template\assets\pages\scripts\widgets.min.js" />
-    <Content Include="App_Themes\Theme\css\MainStyle.css" />
+    <Content Include="App_Themes\Theme\css\animate.css" />
+    <Content Include="App_Themes\Theme\css\MainCss.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>

@@ -1,0 +1,261 @@
+﻿/*My Custm ASP TreeView ================================================================================================================================================*/
+.mytree {
+    font-size: 20px;
+    direction: rtl;
+}
+
+    .mytree .checker {
+        margin: 0 2px 0 0 !important;
+        padding-top: 3px;
+        float: right;
+    }
+
+    .mytree table {
+        padding: 0;
+    }
+
+.mynod {
+    padding: 4px 0 0px 5px;
+    margin: 0 2px 0 0;
+    font-size: 15px;
+    border-radius: 15px;
+    width: 100% !important;
+    overflow: hidden;
+    color: black;
+}
+
+    .mynod a {
+        outline: none;
+        background: transparent !important;
+    }
+
+        .mynod a i {
+            font-style: normal;
+        }
+
+    .mynod:hover {
+        text-decoration: none;
+        background: #e1ffff;
+        border-radius: 7px !important;
+    }
+
+        .mynod:hover > a {
+            text-decoration: none;
+        }
+
+    .mynod a i {
+        outline: none;
+    }
+
+.myselectedNod {
+    overflow: hidden;
+    border-radius: 10px !important;
+    margin: 15px;
+}
+/*END My Custm ASP TreeView ================================================================================================================================================*/
+
+
+/*My Custm ASP GridView ================================================================================================================================================*/
+.myCustmGridView {
+    cursor: default;
+    border: none;
+    border-collapse: separate !important;
+    margin: auto 0 20px 0;
+}
+
+    .myCustmGridView th {
+        font: 18px !important;
+        /*font-family: Arial !important;*/
+        font-weight: bold !important;
+        background-color: #F5F5F5 !important;
+        font-size: 18px !important;
+        text-align: center !important;
+        vertical-align: middle !important;
+        border: 1px solid lightGray !important;
+        -webkit-border-radius: 8px !important;
+        -moz-border-radius: 8px !important;
+        border-radius: 8px !important;
+        /*color: snow;*/
+    }
+
+    .myCustmGridView td {
+        font-size: 16px !important;
+        /*font-family: Arial !important;*/
+        font-weight: bold !important;
+        /*font-size: 19px;*/
+        text-align: center !important;
+        vertical-align: middle !important;
+        border: 1px solid lightGray !important;
+        -webkit-border-radius: 8px !important;
+        -moz-border-radius: 8px !important;
+        border-radius: 8px !important;
+        overflow: hidden !important;
+    }
+
+    /*============================== Pager ======================================*/
+    .myCustmGridView .pagination-ys table {
+        margin-right: 0;
+    }
+
+        .myCustmGridView .pagination-ys table > tbody > tr > td {
+            /*display: inline;*/
+            border: none;
+        }
+
+            .myCustmGridView .pagination-ys table > tbody > tr > td > a,
+            .myCustmGridView .pagination-ys table > tbody > tr > td > span {
+                position: relative;
+                float: right;
+                padding: 8px 12px;
+                line-height: 1.42857143;
+                text-decoration: none;
+                color: #0e6d3a;
+                background-color: #ffffff;
+                border: 1px solid #dddddd;
+                margin-left: -1px;
+            }
+
+            .myCustmGridView .pagination-ys table > tbody > tr > td > span {
+                position: relative;
+                float: right;
+                padding: 8px 12px;
+                line-height: 1.42857143;
+                text-decoration: none;
+                margin-left: -1px;
+                z-index: 2;
+                color: rgba(184,226,246,1);
+                background-color: #36C6D3;
+                border-color: #dddddd;
+                cursor: default;
+            }
+
+            .myCustmGridView .pagination-ys table > tbody > tr > td > a,
+            .myCustmGridView .pagination-ys table > tbody > tr > span {
+                border-radius: 6px;
+            }
+
+            .myCustmGridView .pagination-ys table > tbody > tr > td:first-child > a,
+            .myCustmGridView .pagination-ys table > tbody > tr > td:first-child > span {
+                margin-left: 0;
+                border-radius: 6px;
+            }
+
+            .myCustmGridView .pagination-ys table > tbody > tr > td > a:hover,
+            .myCustmGridView .pagination-ys table > tbody > tr > td > span:hover,
+            .myCustmGridView .pagination-ys table > tbody > tr > td > a:focus,
+            .myCustmGridView .pagination-ys table > tbody > tr > td > span:focus {
+                color: #97310e;
+                background-color: #eeeeee;
+                border-color: #dddddd;
+            }
+
+/*End My Custm ASP GridView*/
+
+/*.linkbtn {
+    margin-left: 10px;
+}*/
+
+.myTreebuton {
+    font-size: 12px;
+}
+
+.datepicker.datepicker-rtl {
+    display: table !important;
+}
+
+.datepicker-dropdown.datepicker-orient-left::before {
+    left: initial !important;
+}
+
+.form .form-actions, .portlet-form .form-actions {
+    padding: 10px;
+}
+
+
+/*Start Fix Modal ================================================================================================================================================*/
+.modal .modal-dialog {
+    margin-top: 30px;
+}
+
+.modal .portlet-title {
+    float: right;
+}
+
+.modal .modal-header {
+    padding: 15px 0 0 15px;
+}
+/*End Fix Modal ================================================================================================================================================*/
+
+.MyMessage {
+    margin-top: 15px;
+}
+
+
+.form-group {
+    overflow: auto;
+}
+
+.IID {
+    color: blue;
+}
+
+.myAlert {
+    margin: 15px 25px;
+}
+
+
+/*Start chkboxss ================================================================================================================================================*/
+
+.chkboxss {
+    border: solid 1px #ced5ce;
+    border-radius: 50% !important;
+    position: relative;
+    cursor: pointer;
+    padding: 1px 5px 1px 6px;
+    font-size: 26px;
+    font-weight: 100 !important;
+    background-color: lightcyan;
+    color: #37746d;
+    top: 20px;
+}
+
+    .chkboxss [type="checkbox"] {
+        display: none !important;
+    }
+
+    /*=====*/
+    .chkboxss .glyphicon-plus {
+        opacity: 0.2;
+    }
+
+    .chkboxss [type="checkbox"]:checked + .glyphicon-plus {
+        opacity: 1;
+    }
+
+    /*=====*/
+    .chkboxss .glyphicon-ok {
+        opacity: 0.2;
+    }
+
+    .chkboxss [type="checkbox"]:checked + .glyphicon-ok {
+        opacity: 1;
+    }
+/*End chkboxss ================================================================================================================================================*/
+
+
+/*Start AScontainer ================================================================================================================================================*/
+
+.col-fixed-113{
+    width:113px;
+    /*background:red;*/
+    position:fixed;
+    /*height:50px;*/
+}
+
+
+
+.col-offset-113{
+  /*background:black;*/
+    padding-left:113px;
+}
+/*End AScontainer ================================================================================================================================================*/

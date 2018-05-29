@@ -10,37 +10,39 @@ namespace MVC_ERP_Systems
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/Scripts/jquery").Include(
-                "~/App_Themes/Template/assets/global/plugins/jquery-{version}.js",
-                //"~/App_Themes/Template/assets/global/plugins/jquery.min",
-                "~/App_Themes/Template/assets/global/plugins/bootstrap/js/bootstrap.min",
-                "~/App_Themes/Template/assets/global/plugins/js.cookie.min",
-                "~/App_Themes/Template/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min",
-                "~/App_Themes/Template/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min",
-                "~/App_Themes/Template/assets/global/plugins/jquery.blockui.min",
-                "~/App_Themes/Template/assets/global/plugins/uniform/jquery.uniform.min",
-                "~/App_Themes/Template/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min",
-                "~/App_Themes/Template/assets/global/scripts/app.min",
-                "~/App_Themes/Template/assets/layouts/layout/scripts/layout.min",
-                "~/App_Themes/Template/assets/layouts/layout/scripts/demo.min",
-                "~/App_Themes/Template/assets/layouts/global/scripts/quick-sidebar.min"
-            ));
+           
+
 
             bundles.Add(new StyleBundle("~/Style/css").Include(
-                "~/App_Themes/Template/assets/global/plugins/font-awesome/css/font-awesome.min",
-                "~/App_Themes/Template/assets/global/plugins/simple-line-icons/simple-line-icons.min",
-                "~/App_Themes/Template/assets/global/plugins/bootstrap/css/bootstrap-rtl.min",
-                "~/App_Themes/Template/assets/global/plugins/uniform/css/uniform.default.min",
-                "~/App_Themes/Template/assets/global/plugins/bootstrap-switch/css/bootstrap-switch-rtl.min",
-                "~/App_Themes/Template/assets/global/css/components-rtl.min",
-                "~/App_Themes/Template/assets/global/css/plugins-rtl.min",
-                "~/App_Themes/Template/assets/layouts/layout/css/layout-rtl.min",
-                "~/App_Themes/Template/assets/layouts/layout/css/themes/darkblue-rtl.min",
-                "~/App_Themes/Template/assets/layouts/layout/css/custom-rtl.min"
-                //<link href="/App_Themes/MainTheme/css/animate",
-                //<link href="/App_Themes/MainTheme/css/MainCss",
-
+                "~/App_Themes/Template/assets/global/plugins/font-awesome/css/font-awesome.min.css",
+                "~/App_Themes/Template/assets/global/plugins/simple-line-icons/simple-line-icons.min.css",
+                "~/App_Themes/Template/assets/global/plugins/bootstrap/css/bootstrap-rtl.min.css",
+                "~/App_Themes/Template/assets/global/plugins/uniform/css/uniform.default.min.css",
+                "~/App_Themes/Template/assets/global/plugins/bootstrap-switch/css/bootstrap-switch-rtl.min.css",
+                "~/App_Themes/Template/assets/global/css/components-rtl.min.css",
+                "~/App_Themes/Template/assets/global/css/plugins-rtl.min.css",
+                "~/App_Themes/Template/assets/layouts/layout/css/layout-rtl.min.css",
+                "~/App_Themes/Template/assets/layouts/layout/css/themes/darkblue-rtl.min.css",
+                "~/App_Themes/Template/assets/layouts/layout/css/custom-rtl.min.css",
+                "~/App_Themes/Theme/css/MainCss.css",
+                "~/App_Themes/Theme/css/animate.css"
                 ));
+
+
+            bundles.Add(new ScriptBundle("~/Scripts/js").Include(
+               "~/App_Themes/Template/assets/global/plugins/jquery.min.js",
+               "~/App_Themes/Template/assets/global/plugins/bootstrap/js/bootstrap.min.js",
+               "~/App_Themes/Template/assets/global/plugins/js.cookie.min.js",
+               "~/App_Themes/Template/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js",
+               "~/App_Themes/Template/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js",
+               "~/App_Themes/Template/assets/global/plugins/jquery.blockui.min.js",
+               "~/App_Themes/Template/assets/global/plugins/uniform/jquery.uniform.min.js",
+               "~/App_Themes/Template/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js",
+               "~/App_Themes/Template/assets/global/scripts/app.min.js",
+               "~/App_Themes/Template/assets/layouts/layout/scripts/layout.min.js",
+               "~/App_Themes/Template/assets/layouts/layout/scripts/demo.min.js",
+               "~/App_Themes/Template/assets/layouts/global/scripts/quick-sidebar.min.js"
+           ));
         }
     }
 }
