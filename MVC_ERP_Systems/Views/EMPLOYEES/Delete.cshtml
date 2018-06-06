@@ -1,0 +1,168 @@
+﻿@model MVC_ERP_Systems.Models.EMPLOYEES
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>EMPLOYEES</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EMP_NO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMP_NO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMPLOYEE_FIRST_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMPLOYEE_FIRST_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMPLOYEE_FATHER_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMPLOYEE_FATHER_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMPLOYEE_GRAND_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMPLOYEE_GRAND_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMPLOYEE_FAMILY_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMPLOYEE_FAMILY_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FULL_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FULL_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SOLDIER_NO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOLDIER_NO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDENTITY_NO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDENTITY_NO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMP_H_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMP_H_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GENDER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GENDER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PHONE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHONE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PROV_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROV_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEPT_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEPT_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIV_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIV_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SECTION_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SECTION_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CREATION_USER_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CREATION_USER_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CREATION_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CREATION_DATE)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

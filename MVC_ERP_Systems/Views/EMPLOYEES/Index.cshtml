@@ -1,0 +1,256 @@
+﻿@model IEnumerable<MVC_ERP_Systems.Models.EMPLOYEES>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li>
+                    <a href="/MainForms/Home.asp">الرئيسية</a>
+
+                    <i class="fa fa-circle"></i>
+                </li>
+
+                <li>
+                    <span>عرض الموظفين</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="portlet box green ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i>عرض الموظفين
+                </div>
+            </div>
+
+            <div class="portlet-body form">
+                <div class="form-body">
+                    <div class="form-actions" id="divAddEmp" runat="server" visible="false">
+
+
+
+
+                        <div class="col-xs-4">
+                            <p>
+                                @Html.ActionLink("Create New", "Create")
+                            </p>
+
+                            @*<asp:LinkButton ID="AddEmp" runat="server" CssClass="btn btn-lg btn-warning" ToolTip="اضافة موظف"
+                                                    OnClick="AddEmp_Click"
+                                                    OnClientClick="document.getElementById('form1').target ='';">
+                                        <span aria-hidden="true" class="fa fa-user-plus" style="font-size:25px; margin:-8px" />
+                                    </asp:LinkButton>
+                                    إضافة موظف
+                                </div>*@
+
+                            <div class="col-xs-4">
+                            </div>
+
+
+
+                        </div>
+                        <br />
+
+
+
+                        <style>
+                            .checker {
+                                float: right;
+                            }
+
+                                .checker input {
+                                    margin: 5px;
+                                }
+
+                            .srow {
+                                padding: 2px;
+                            }
+
+                            .slab {
+                                width: 125px;
+                            }
+
+                            .select2 {
+                                width: 450px !important;
+                            }
+
+                            .select22 {
+                                width: 450px !important;
+                            }
+
+                            .select222 {
+                                width: 223px !important;
+                            }
+                        </style>
+
+
+
+
+
+                        <div class="row srow">
+                            <div class="col-xs-12">
+                                @*<asp:LinkButton ID="btnsharch2" runat="server" CssClass="btn btn-primary" OnClick="btnsharch2_Click">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                        <span>بحث</span>
+                                    </asp:LinkButton>*@
+                            </div>
+                        </div>
+
+                        <br />
+
+                        @*<img src="/App_Themes/MainTheme/img/ProgPar2.gif" alt="ProgPar" style="width: 100%; height: 5px; border-radius: 15px;" />
+                            <br />*@
+
+
+                        <br />
+                        <style>
+                            .grdf td, .grdf th {
+                                font-size: 13px !important;
+                            }
+                        </style>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+
+                                <table class="table">
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.EMP_NO)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.EMPLOYEE_FIRST_NAME)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.EMPLOYEE_FATHER_NAME)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.EMPLOYEE_GRAND_NAME)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.EMPLOYEE_FAMILY_NAME)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.FULL_NAME)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.SOLDIER_NO)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.IDENTITY_NO)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.EMP_H_DATE)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.GENDER)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.PHONE)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.PROV_ID)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.DEPT_ID)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.DIV_ID)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.SECTION_ID)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.EMAIL)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.CREATION_USER_ID)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.CREATION_DATE)
+                                        </th>
+                                        <th></th>
+                                    </tr>
+
+                                    @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EMP_NO)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EMPLOYEE_FIRST_NAME)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EMPLOYEE_FATHER_NAME)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EMPLOYEE_GRAND_NAME)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EMPLOYEE_FAMILY_NAME)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.FULL_NAME)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.SOLDIER_NO)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IDENTITY_NO)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EMP_H_DATE)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.GENDER)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PHONE)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PROV_ID)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DEPT_ID)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DIV_ID)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.SECTION_ID)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EMAIL)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CREATION_USER_ID)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CREATION_DATE)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                                        </td>
+                                    </tr>
+                                }
+
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="SEMessage"></div>
+
+        </div>
+    </div>
+</div>

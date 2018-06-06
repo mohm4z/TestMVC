@@ -5142,11 +5142,15 @@
       <DependentUpon>MEFDB.edmx</DependentUpon>
       <LastGenOutput>MEFDB.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EMPLOYEESController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -5651,6 +5655,12 @@
     <Content Include="Models\MEFDB.edmx.diagram">
       <DependentUpon>MEFDB.edmx</DependentUpon>
     </Content>
+    <Content Include="Views\EMPLOYEES\Create.cshtml" />
+    <Content Include="Views\EMPLOYEES\Delete.cshtml" />
+    <Content Include="Views\EMPLOYEES\Details.cshtml" />
+    <Content Include="Views\EMPLOYEES\Edit.cshtml" />
+    <Content Include="Views\EMPLOYEES\Index.cshtml" />
+    <Content Include="Scripts\angular.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
