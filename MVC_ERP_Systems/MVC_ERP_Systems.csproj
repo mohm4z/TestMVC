@@ -5142,9 +5142,8 @@
       <DependentUpon>MEFDB.edmx</DependentUpon>
       <LastGenOutput>MEFDB.cs</LastGenOutput>
     </Content>
-    <Content Include="Scripts\angular-mocks.js" />
-    <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\ng-file-upload.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -5660,7 +5659,6 @@
     <Content Include="Views\EMPLOYEES\Details.cshtml" />
     <Content Include="Views\EMPLOYEES\Edit.cshtml" />
     <Content Include="Views\EMPLOYEES\Index.cshtml" />
-    <Content Include="Scripts\angular.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
