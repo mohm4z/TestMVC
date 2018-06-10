@@ -1,17 +1,17 @@
-﻿@model IEnumerable<MVC_ERP_Systems.Models.EMPLOYEES>
+﻿@*@model IEnumerable<MVC_ERP_Systems.Models.EMPLOYEES>*@
 
 @{
     ViewBag.Title = "Index";
 }
 
-<div class="page-content-wrapper">
-    <div class="page-content">
+<div class="page-content-wrapper" ng-app="AngApp">
+    <div class="page-content" ng-controller="EmpsController">
         <div class="page-bar">
             <ul class="page-breadcrumb">
                 <li>
                     <a href="/MainForms/Home.asp">الرئيسية</a>
 
-                    <i class="fa fa-circle"></i>
+                    <i class="graph"></i>
                 </li>
 
                 <li>
@@ -31,226 +31,196 @@
                 <div class="form-body">
                     <div class="form-actions" id="divAddEmp">
 
-
-
-
                         <div class="col-xs-4">
-                            <p>
-                                @Html.ActionLink("Create New", "Create")
-                            </p>
+                            <a href="Create" class="btn btn-lg btn-warning" title="اضافة موظف">اضافة موظف</a>
+                        </div>
 
-                            @*<asp:LinkButton ID="AddEmp" runat="server" CssClass="btn btn-lg btn-warning" ToolTip="اضافة موظف"
-                                                    OnClick="AddEmp_Click"
-                                                    OnClientClick="document.getElementById('form1').target ='';">
-                                        <span aria-hidden="true" class="fa fa-user-plus" style="font-size:25px; margin:-8px" />
-                                    </asp:LinkButton>
-                                    إضافة موظف
-                                </div>*@
+                    </div>
+                    <br />
+                    <br />
 
-                            <div class="col-xs-4">
+
+
+                    <div class="row srow">
+                        <div class="col-xs-12">
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="input-group">
+                                    <input type="text" name="txtSearch" placeholder="بحث ... " class="form-control" value="{{totalcount}}" />
+
+                                    <div class="input-group-btn">
+                                        <button  onclick="AGetData(); return false;" class="btn btn-primary">
+                                            <i class="glyphicon glyphicon-search"></i>
+                                        </button>
+
+                                    </div>
+                                </div>
                             </div>
 
 
-
+                            @*<asp:LinkButton ID="btnsharch2" runat="server" CssClass="btn btn-primary" OnClick="btnsharch2_Click">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                    <span>بحث</span>
+                                </asp:LinkButton>*@
                         </div>
-                        <br />
+                    </div>
+
+                    <br />
+                    <br />
 
 
 
-                        <style>
-                            .checker {
-                                float: right;
-                            }
-
-                                .checker input {
-                                    margin: 5px;
-                                }
-
-                            .srow {
-                                padding: 2px;
-                            }
-
-                            .slab {
-                                width: 125px;
-                            }
-
-                            .select2 {
-                                width: 450px !important;
-                            }
-
-                            .select22 {
-                                width: 450px !important;
-                            }
-
-                            .select222 {
-                                width: 223px !important;
-                            }
-                        </style>
-
-
-
-
-
-                        <div class="row srow">
-                            <div class="col-xs-12">
-                                @*<asp:LinkButton ID="btnsharch2" runat="server" CssClass="btn btn-primary" OnClick="btnsharch2_Click">
-                                        <i class="glyphicon glyphicon-search"></i>
-                                        <span>بحث</span>
-                                    </asp:LinkButton>*@
-                            </div>
-                        </div>
-
-                        <br />
-
-                        @*<img src="/App_Themes/MainTheme/img/ProgPar2.gif" alt="ProgPar" style="width: 100%; height: 5px; border-radius: 15px;" />
-                            <br />*@
-
-
-                        <br />
-                        <style>
-                            .grdf td, .grdf th {
-                                font-size: 13px !important;
-                            }
-                        </style>
-
-                        <div class="row">
-                            <div class="col-xs-12">
-
-                                <table class="table">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <table class="table table-striped table-bordered table-hover">
+                                <thead>
                                     <tr>
                                         <th>
-                                            @Html.DisplayNameFor(model => model.EMP_NO)
+                                            رقم الموظف
                                         </th>
                                         <th>
-                                            @Html.DisplayNameFor(model => model.EMPLOYEE_FIRST_NAME)
+                                            الإسم
                                         </th>
                                         <th>
-                                            @Html.DisplayNameFor(model => model.EMPLOYEE_FATHER_NAME)
+                                            الرقم العسكري
                                         </th>
                                         <th>
-                                            @Html.DisplayNameFor(model => model.EMPLOYEE_GRAND_NAME)
+                                            رقم الهوية
                                         </th>
                                         <th>
-                                            @Html.DisplayNameFor(model => model.EMPLOYEE_FAMILY_NAME)
+                                            إجراءات
                                         </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.FULL_NAME)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.SOLDIER_NO)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.IDENTITY_NO)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.EMP_H_DATE)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.GENDER)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.PHONE)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.PROV_ID)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.DEPT_ID)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.DIV_ID)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.SECTION_ID)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.EMAIL)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.CREATION_USER_ID)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.CREATION_DATE)
-                                        </th>
-                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="emp in EMPLOYEES">
+
+                                        <td>{{emp.EMP_NO}}</td>
+                                        <td>{{emp.FULL_NAME}}</td>
+                                        <td>{{emp.SOLDIER_NO}}</td>
+                                        <td>{{emp.IDENTITY_NO}}</td>
+                                        <td>
+                                            <a href="Edit/{{EMP_NO}}">content</a>
+                                        </td>
                                     </tr>
 
-                                    @foreach (var item in Model)
-                                {
+
+                                    @*@foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.EMP_NO)
+                                                </td>
+
+                                                <td>
+                                            <td>{{EMPLOYEES.EMP_NO}}</td>
+                                                    @Html.DisplayFor(modelItem => item.FULL_NAME)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.SOLDIER_NO)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.IDENTITY_NO)
+                                                </td>
+
+                                                <td>
+                                                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) ||
+                                                    @Html.ActionLink("Details", "Details", new { id = item.ID }) ||
+                                                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                                                </td>
+                                            </tr>
+                                        }*@
+                                </tbody>
+
+                                <tfoot>
+
                                     <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.EMP_NO)
+
+                                        <td align="center" colspan="6   ">
+
+                                            <span class="form-group pull-right page-size form-inline">
+
+                                                <select id="ddlPageSize" class="form-control control-color"
+                                                        ng-model="pageSize"
+                                                        ng-change="changePageSize()">
+
+                                                    <option value="5" selected="selected">5</option>
+
+                                                    <option value="10">10</option>
+
+                                                    <option value="25">25</option>
+
+                                                    <option value="50">50</option>
+
+                                                </select>
+
+                                            </span>
+
+                                            <div class="pull-left">
+
+                                                <div total-items="totalcount" ng-change="pagechanged()" items-per-page="pageSize" 
+                                                            direction-links="true" ng-model="pageIndex" max-size="maxsize" class="pagination" 
+                                                            boundary-links="true" rotate="false" num-pages="numPages">
+                                                </div>
+
+                                                <a class="btn btn-primary">صفحة: {{pageIndex}} / {{numPages}}</a>
+
+                                            </div>
+
                                         </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.EMPLOYEE_FIRST_NAME)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.EMPLOYEE_FATHER_NAME)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.EMPLOYEE_GRAND_NAME)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.EMPLOYEE_FAMILY_NAME)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.FULL_NAME)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.SOLDIER_NO)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.IDENTITY_NO)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.EMP_H_DATE)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.GENDER)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.PHONE)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.PROV_ID)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.DEPT_ID)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.DIV_ID)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.SECTION_ID)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.EMAIL)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.CREATION_USER_ID)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.CREATION_DATE)
-                                        </td>
-                                        <td>
-                                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                                            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                                        </td>
+
                                     </tr>
-                                }
 
-                                </table>
-                            </div>
+                                </tfoot>
+                            </table>
                         </div>
-
                     </div>
                 </div>
             </div>
 
-
             <div id="SEMessage"></div>
-
         </div>
     </div>
 </div>
+
+@section scripts{
+    <script>
+        var app = angular.module("AngApp", ['ui.bootstrap']);
+
+        app.controller("EmpsController", function ($scope, $http) {
+
+            $scope.maxsize = 10;
+            $scope.totalcount = 0;
+            $scope.pageIndex = 1;
+            $scope.pageSize = 10;
+
+            $scope.AGetData = function () {
+                $http.get("/EMPLOYEES/GaetData?pageindex=" + $scope.pageIndex + "&pagesize=" + $scope.pageSize).then(function (response) {
+
+                    $scope.EMPLOYEES = response.data.EMPLOYEES;
+
+                    $scope.totalcount = response.data.totalcount;
+
+                }, function (error) {
+
+                    alert('failed');
+                });
+            }
+
+            $scope.AGetData();
+
+            $scope.pagechanged = function () {
+
+                $scope.AGetData();
+            }
+
+            $scope.changePageSize = function () {
+
+                $scope.pageIndex = 1;
+
+                $scope.AGetData();
+            }
+        });
+
+    </script>
+}

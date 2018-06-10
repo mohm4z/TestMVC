@@ -10,6 +10,12 @@ using MVC_ERP_Systems.Models;
 
 namespace MVC_ERP_Systems.Controllers
 {
+    public class EmpModle
+    {
+        public List<EMPLOYEES> EMPLOYEES { get; set; }
+        public int totalcount { get; set; }
+    }
+
     public class EMPLOYEESController : Controller
     {
         private MEFDBEs db = new MEFDBEs();
@@ -17,8 +23,27 @@ namespace MVC_ERP_Systems.Controllers
         // GET: EMPLOYEES
         public ActionResult Index()
         {
-            return View(db.EMPLOYEES);
+            return View();
         }
+
+
+        public JsonResult GaetData(string SearchText, int? pageindex, int? pagesize)
+        {
+            EmpModle EmpModle1 = new EmpModle();
+
+            EmpModle1.EMPLOYEES = db.EMPLOYEES.OrderBy(emp => emp.EMP_NO)
+                .Where(emp => emp.FULL_NAME.Contains(SearchText) || emp.EMP_NO.ToString() == SearchText)
+                .Skip((pageindex ?? 0) * 10)
+                .Take(pagesize ?? 5)
+                .ToList();
+
+            EmpModle1.totalcount = db.EMPLOYEES.OrderBy(emp => emp.EMP_NO)
+                .Where(emp => emp.FULL_NAME.Contains(SearchText) || emp.EMP_NO.ToString() == SearchText)
+                .Count();
+
+            return Json(EmpModle1, JsonRequestBehavior.AllowGet);
+        }
+
 
         // GET: EMPLOYEES/Details/5
         public ActionResult Details(long? id)

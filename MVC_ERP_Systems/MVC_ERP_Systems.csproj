@@ -5131,6 +5131,7 @@
     <Content Include="App_Themes\Template\assets\pages\scripts\widgets.min.js" />
     <Content Include="App_Themes\Theme\css\animate.css" />
     <Content Include="App_Themes\Theme\css\MainCss.css" />
+    <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="Global.asax" />
     <Content Include="Models\MEFDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -5142,6 +5143,9 @@
       <DependentUpon>MEFDB.edmx</DependentUpon>
       <LastGenOutput>MEFDB.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\AngApp.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\ng-file-upload.min.js" />
     <Content Include="Web.config" />
