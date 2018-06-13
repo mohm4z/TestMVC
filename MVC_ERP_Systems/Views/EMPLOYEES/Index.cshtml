@@ -4,6 +4,7 @@
     ViewBag.Title = "Index";
 }
 
+
 <div class="page-content-wrapper" ng-app="AngApp">
     <div class="page-content" ng-controller="EmpsController">
         <div class="page-bar">
@@ -49,7 +50,7 @@
                                     <input type="text" name="txtSearch" placeholder="بحث ... " class="form-control" value="{{totalcount}}" />
 
                                     <div class="input-group-btn">
-                                        <button  onclick="AGetData(); return false;" class="btn btn-primary">
+                                        <button onclick="AGetData(); return false;" class="btn btn-primary">
                                             <i class="glyphicon glyphicon-search"></i>
                                         </button>
 
@@ -133,44 +134,39 @@
                                 </tbody>
 
                                 <tfoot>
-
                                     <tr>
-
                                         <td align="center" colspan="6   ">
+                                            <div class="pull-left">
+                                                <ul uib-pagination total-items="totalcount" ng-change="pagechanged()" items-per-page="itemsPerPage"
+                                                    direction-links="true" ng-model="currentPage" max-size="maxsize" class="pagination"
+                                                    boundary-links="true" rotate="false" num-pages="numPages"></ul>
 
-                                            <span class="form-group pull-right page-size form-inline">
+                                                @*<pagination total-items="totalcount" ng-change="pagechanged()" items-per-page="itemsPerPage"
+                        direction-links="true" ng-model="currentPage" max-size="maxsize" class="pagination"
+                        boundary-links="true" rotate="false" num-pages="numPages" >
+            </pagination>*@
+                                            </div>
 
-                                                <select id="ddlPageSize" class="form-control control-color"
-                                                        ng-model="pageSize"
+                                            <span class="form-group pull-right form-inline">
+                                                <select id="ddlPageSize" class="form-control selector"
+                                                        ng-model="itemsPerPage"
+                                                        data-ng-init="itemsPerPage = '10'"
                                                         ng-change="changePageSize()">
 
-                                                    <option value="5" selected="selected">5</option>
-
+                                                    <option value="5">5</option>
                                                     <option value="10">10</option>
-
                                                     <option value="25">25</option>
-
                                                     <option value="50">50</option>
-
                                                 </select>
+                                                <a class="btn btn-primary">الصفحة: {{currentPage}} / {{numPages}}</a>
 
                                             </span>
 
-                                            <div class="pull-left">
 
-                                                <div total-items="totalcount" ng-change="pagechanged()" items-per-page="pageSize" 
-                                                            direction-links="true" ng-model="pageIndex" max-size="maxsize" class="pagination" 
-                                                            boundary-links="true" rotate="false" num-pages="numPages">
-                                                </div>
-
-                                                <a class="btn btn-primary">صفحة: {{pageIndex}} / {{numPages}}</a>
-
-                                            </div>
+                                           
 
                                         </td>
-
                                     </tr>
-
                                 </tfoot>
                             </table>
                         </div>
@@ -191,11 +187,11 @@
 
             $scope.maxsize = 10;
             $scope.totalcount = 0;
-            $scope.pageIndex = 1;
-            $scope.pageSize = 10;
+            $scope.currentPage = 1;
+            $scope.itemsPerPage = 10;
 
             $scope.AGetData = function () {
-                $http.get("/EMPLOYEES/GaetData?pageindex=" + $scope.pageIndex + "&pagesize=" + $scope.pageSize).then(function (response) {
+                $http.get("/EMPLOYEES/GaetData?pageindex=" + $scope.currentPage + "&pagesize=" + $scope.itemsPerPage).then(function (response) {
 
                     $scope.EMPLOYEES = response.data.EMPLOYEES;
 
@@ -216,7 +212,7 @@
 
             $scope.changePageSize = function () {
 
-                $scope.pageIndex = 1;
+                $scope.currentPage = 1;
 
                 $scope.AGetData();
             }

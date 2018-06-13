@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="AngApp">
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+
+    <script src="~/App_Themes/Template/assets/global/plugins/jquery.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/App_Themes/Template/assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <link href="~/Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <script src="~/Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="~/Scripts/ng-file-upload.min.js"></script>
+    <link href="~/App_Themes/Template/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body ng-controller="EmpsController">
+    <div class="row srow">
+        <div class="col-xs-12">
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="input-group">
+                    <input type="text" name="txtSearch" placeholder="بحث ... " class="form-control" value="{{totalcount}}" />
+
+                    <div class="input-group-btn">
+                        <button onclick="AGetData(); return false;" class="btn btn-primary">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+
+            @*<asp:LinkButton ID="btnsharch2" runat="server" CssClass="btn btn-primary" OnClick="btnsharch2_Click">
+                    <i class="glyphicon glyphicon-search"></i>
+                    <span>بحث</span>
+                </asp:LinkButton>*@
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            رقم الموظف
+                        </th>
+                        <th>
+                            الإسم
+                        </th>
+                        <th>
+                            الرقم العسكري
+                        </th>
+                        <th>
+                            رقم الهوية
+                        </th>
+                        <th>
+                            إجراءات
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="emp in EMPLOYEES">
+
+                        <td>{{emp.EMP_NO}}</td>
+                        <td>{{emp.FULL_NAME}}</td>
+                        <td>{{emp.SOLDIER_NO}}</td>
+                        <td>{{emp.IDENTITY_NO}}</td>
+                        <td>
+                            <a href="Edit/{{EMP_NO}}">content</a>
+                        </td>
+                    </tr>
+
+
+                    @*@foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EMP_NO)
+                                </td>
+
+                                <td>
+                            <td>{{EMPLOYEES.EMP_NO}}</td>
+                                    @Html.DisplayFor(modelItem => item.FULL_NAME)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SOLDIER_NO)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IDENTITY_NO)
+                                </td>
+
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) ||
+                                    @Html.ActionLink("Details", "Details", new { id = item.ID }) ||
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                                </td>
+                            </tr>
+                        }*@
+                </tbody>
+
+                <tfoot>
+
+                    <tr>
+
+                        <td align="center" colspan="6   ">
+
+                            <span class="form-group pull-right page-size form-inline">
+
+                                <select id="ddlPageSize" class="form-control control-color"
+                                        ng-model="pageSize"
+                                        ng-change="changePageSize()">
+
+                                    <option value="5" selected="selected">5</option>
+
+                                    <option value="10">10</option>
+
+                                    <option value="25">25</option>
+
+                                    <option value="50">50</option>
+
+                                </select>
+
+                            </span>
+
+                            <div class="pull-left">
+
+                                <div total-items="totalcount" ng-change="pagechanged()" items-per-page="pageSize"
+                                     direction-links="true" ng-model="pageIndex" max-size="maxsize" class="pagination"
+                                     boundary-links="true" rotate="false" num-pages="numPages">
+                                </div>
+
+                                <a class="btn btn-primary">صفحة: {{pageIndex}} / {{numPages}}</a>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</body>
+
+
+<script>
+    var app = angular.module("AngApp", ['ui.bootstrap']);
+
+    app.controller("EmpsController", function ($scope, $http) {
+
+        $scope.maxsize = 10;
+        $scope.totalcount = 0;
+        $scope.pageIndex = 1;
+        $scope.pageSize = 10;
+
+        $scope.AGetData = function () {
+            $http.get("/EMPLOYEES/GaetData?pageindex=" + $scope.pageIndex + "&pagesize=" + $scope.pageSize).then(function (response) {
+
+                $scope.EMPLOYEES = response.data.EMPLOYEES;
+
+                $scope.totalcount = response.data.totalcount;
+
+            }, function (error) {
+
+                alert('failed');
+            });
+        }
+
+        $scope.AGetData();
+
+        $scope.pagechanged = function () {
+
+            $scope.AGetData();
+        }
+
+        $scope.changePageSize = function () {
+
+            $scope.pageIndex = 1;
+
+            $scope.AGetData();
+        }
+    });
+
+</script>
+
+</html>

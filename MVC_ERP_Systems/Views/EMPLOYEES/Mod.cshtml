@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Mod";
+}
+
+<h2>Mod</h2>
+
+
+@section scripts{
+    <script>
+        var app = angular.module("AngApp", []);
+
+        app.controller("EmpsController", function ($scope, $http) {
+
+            $scope.maxsize = 10;
+            $scope.totalcount = 0;
+            $scope.currentPage = 1;
+            $scope.itemsPerPage = 10;
+
+            $scope.AGetData = function () {
+                $http.get("/EMPLOYEES/GaetData?pageindex=" + $scope.currentPage + "&pagesize=" + $scope.itemsPerPage).then(function (response) {
+
+                    $scope.EMPLOYEES = response.data.EMPLOYEES;
+
+                    $scope.totalcount = response.data.totalcount;
+
+                }, function (error) {
+
+                    alert('failed');
+                });
+            }
+
+            $scope.AGetData();
+
+            $scope.pageChanged = function () {
+
+                $scope.AGetData();
+            }
+
+            $scope.changePageSize = function () {
+
+                $scope.currentPage = 1;
+
+                $scope.AGetData();
+            }
+        });
+
+    </script>
+}

@@ -5131,6 +5131,9 @@
     <Content Include="App_Themes\Template\assets\pages\scripts\widgets.min.js" />
     <Content Include="App_Themes\Theme\css\animate.css" />
     <Content Include="App_Themes\Theme\css\MainCss.css" />
+    <Content Include="App_Themes\Theme\Plugins\Select2\select2.full.min.js" />
+    <Content Include="App_Themes\Theme\Plugins\Select2\select2.min.css" />
+    <Content Include="App_Themes\Theme\Plugins\Select2\select2.min.js" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="Global.asax" />
     <Content Include="Models\MEFDB.Context.tt">
@@ -5650,7 +5653,6 @@
     <Content Include="App_Themes\Template\assets\pages\media\pages\Thumbs.db" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <EntityDeploy Include="Models\MEFDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MEFDB.Designer.cs</LastGenOutput>
@@ -5663,6 +5665,9 @@
     <Content Include="Views\EMPLOYEES\Details.cshtml" />
     <Content Include="Views\EMPLOYEES\Edit.cshtml" />
     <Content Include="Views\EMPLOYEES\Index.cshtml" />
+    <Content Include="Views\EMPLOYEES\Pages.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\EMPLOYEES\Mod.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -26,19 +26,25 @@ namespace MVC_ERP_Systems.Controllers
             return View();
         }
 
+        // GET: EMPLOYEES
+        public ActionResult Pages()
+        {
+            return View();
+        }
 
-        public JsonResult GaetData(string SearchText, int? pageindex, int? pagesize)
+
+        public JsonResult GaetData(int? pageindex, int? pagesize)
         {
             EmpModle EmpModle1 = new EmpModle();
 
             EmpModle1.EMPLOYEES = db.EMPLOYEES.OrderBy(emp => emp.EMP_NO)
-                .Where(emp => emp.FULL_NAME.Contains(SearchText) || emp.EMP_NO.ToString() == SearchText)
+                //.Where(emp => emp.FULL_NAME.Contains(SearchText) || emp.EMP_NO.ToString() == SearchText)
                 .Skip((pageindex ?? 0) * 10)
                 .Take(pagesize ?? 5)
                 .ToList();
 
             EmpModle1.totalcount = db.EMPLOYEES.OrderBy(emp => emp.EMP_NO)
-                .Where(emp => emp.FULL_NAME.Contains(SearchText) || emp.EMP_NO.ToString() == SearchText)
+                //.Where(emp => emp.FULL_NAME.Contains(SearchText) || emp.EMP_NO.ToString() == SearchText)
                 .Count();
 
             return Json(EmpModle1, JsonRequestBehavior.AllowGet);
