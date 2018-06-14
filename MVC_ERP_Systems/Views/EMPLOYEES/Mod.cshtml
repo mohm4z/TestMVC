@@ -115,7 +115,7 @@
                 </div>
             </div>
 
-            <div id="SEMessage" />
+            <div id="SEMessage" class="alert-error"></div>
         </form>
 
     </div>
@@ -125,7 +125,15 @@
 
 @section scripts{
     <script>
-        //$('#SEMessage').hide().removeClass();
+        $('#SEMessage').empty().hide();
+
+        function ShowSMEs(o, m) {
+            o.show();
+
+            angular.forEach(m, function (value, key) {
+                o.append("<div class='alert alert-" + value.Stat + "'>" + value.SEM + "</div>");
+            });
+        };
 
         var app = angular.module('AngApp', []);
 
@@ -141,9 +149,16 @@
                     method: 'POST',
                     url: "/EMPLOYEES/Insert",
                     data: $scope.Emp
-                }).then(function (data) {
+                }).then(function (om) {
 
-                    alert('Data Submitted...!');
+                   
+                    //angular.forEach(data, function (item, index) {
+                    //    alert(item['SEM']);
+                    //});
+
+                    ShowSMEs($('#SEMessage'), om.data);
+
+                    //alert('Data Submitted...!');
                 });
             }
         });

@@ -16,11 +16,11 @@ namespace MVC_ERP_Systems.Controllers
         public int totalcount { get; set; }
     }
 
-    public   class StatesAndMaseges
+    public class LOM
     {
-        /// 1 = Sucsses, 2 = Failed, 3 = info 
-         public int Status { get; set; }
-         public string SEM { get; set; }
+        /// success, warning, info, danger
+        public string Stat { get; set; }
+        public string SEM { get; set; }
 
         //public  void dd(int Statusp, string SEMp)
         //{
@@ -99,28 +99,20 @@ namespace MVC_ERP_Systems.Controllers
         //[ValidateAntiForgeryToken]
         public JsonResult Insert(EMPLOYEES eMPLOYEES)
         {
-            //StatesAndMaseges stat = new StatesAndMaseges();
-
-            string ss = "";
-          
-                //eMPLOYEES.EMP_H_DATE = new DateTime();
-                eMPLOYEES.FULL_NAME = eMPLOYEES.EMPLOYEE_FIRST_NAME;
-                db.EMPLOYEES.Add(eMPLOYEES);
-                db.SaveChanges();
-                //return RedirectToAction("Index");
-                //}
-                //stat.Status = 1;
-                //stat.SEM = "تم بنجاج";
+            List<LOM> lom = new List<LOM>();
 
 
-           
+            //eMPLOYEES.EMP_H_DATE = new DateTime();
+            eMPLOYEES.FULL_NAME = eMPLOYEES.EMPLOYEE_FIRST_NAME;
+            db.EMPLOYEES.Add(eMPLOYEES);
+            db.SaveChanges();
+         
 
-            return Json(ss, JsonRequestBehavior.AllowGet);
+            lom.Add(new LOM { Stat = "success", SEM = "تم بنجاج" });
+            lom.Add(new LOM { Stat = "warning", SEM = "لم يتم" });
 
 
-            //if (ModelState.IsValid)
-            //{
-
+            return Json(lom.ToList(), JsonRequestBehavior.AllowGet);
         }
 
         // GET: EMPLOYEES/Edit/5
