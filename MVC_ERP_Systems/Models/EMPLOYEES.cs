@@ -11,13 +11,11 @@ namespace MVC_ERP_Systems.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class EMPLOYEES
     {
         public long ID { get; set; }
-
-        public long EMP_NO { get; set; }
+        public Nullable<long> EMP_NO { get; set; }
         public string EMPLOYEE_FIRST_NAME { get; set; }
         public string EMPLOYEE_FATHER_NAME { get; set; }
         public string EMPLOYEE_GRAND_NAME { get; set; }
@@ -33,7 +31,7 @@ namespace MVC_ERP_Systems.Models
         public Nullable<long> DIV_ID { get; set; }
         public Nullable<long> SECTION_ID { get; set; }
         public string EMAIL { get; set; }
-        public long CREATION_USER_ID { get; set; }
-        public System.DateTime CREATION_DATE { get; set; }
+        public Nullable<long> CREATION_USER_ID { get; set; }
+        public Nullable<System.DateTime> CREATION_DATE { get; set; }
     }
 }

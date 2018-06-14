@@ -4781,8 +4781,21 @@ a.badge:focus {
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 @-ms-viewport {
+    width: device-width;
+}
+
+@-moz-viewport {
   width: device-width;
 }
+
+@-webkit-viewport {
+  width: device-width;
+}
+
+@viewport {
+  width: device-width;
+}
+
 .hidden {
   display: none;
   visibility: hidden;

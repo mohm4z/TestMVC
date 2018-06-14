@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MEFDBM.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MEFDBM.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CERTIFICATE_TYPES">
           <Key>
             <PropertyRef Name="ID" />
@@ -142,20 +142,6 @@
           <Property Name="DEP_NO" Type="bigint" />
           <Property Name="DEP_NAME" Type="nvarchar" MaxLength="500" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'GDPDB.dbo.DT_EMPS_ED_PROM' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="DT_EMPS_ED_PROM">
-          <Property Name="IDENTITY_NO" Type="nvarchar" MaxLength="255" />
-          <Property Name="FULL_NAME" Type="nvarchar" MaxLength="255" />
-          <Property Name="SOLDIER_NO" Type="float" />
-          <Property Name="RANK_ID" Type="float" />
-          <Property Name="DEPT_ID" Type="float" />
-          <Property Name="QUAL_ID" Type="float" />
-          <Property Name="EMP_H_DATE" Type="nvarchar" MaxLength="255" />
-          <Property Name="RANK_DATE" Type="nvarchar" MaxLength="255" />
-          <Property Name="MERIT_DATE" Type="nvarchar" MaxLength="255" />
-          <Property Name="EMP_NO" Type="bigint" />
-        </EntityType>-->
         <EntityType Name="EDUCATION">
           <Key>
             <PropertyRef Name="ID" />
@@ -174,7 +160,7 @@ warning 6013: The table/view 'GDPDB.dbo.DT_EMPS_ED_PROM' does not have a primary
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EMP_NO" Type="bigint" Nullable="false" />
+          <Property Name="EMP_NO" Type="bigint" />
           <Property Name="EMPLOYEE_FIRST_NAME" Type="nvarchar" MaxLength="50" />
           <Property Name="EMPLOYEE_FATHER_NAME" Type="nvarchar" MaxLength="50" />
           <Property Name="EMPLOYEE_GRAND_NAME" Type="nvarchar" MaxLength="50" />
@@ -190,8 +176,8 @@ warning 6013: The table/view 'GDPDB.dbo.DT_EMPS_ED_PROM' does not have a primary
           <Property Name="DIV_ID" Type="bigint" />
           <Property Name="SECTION_ID" Type="bigint" />
           <Property Name="EMAIL" Type="nvarchar" MaxLength="100" />
-          <Property Name="CREATION_USER_ID" Type="bigint" Nullable="false" />
-          <Property Name="CREATION_DATE" Type="datetime" Nullable="false" />
+          <Property Name="CREATION_USER_ID" Type="bigint" />
+          <Property Name="CREATION_DATE" Type="datetime" />
         </EntityType>
         <EntityType Name="FIELD_SERVICE">
           <Key>
@@ -766,17 +752,6 @@ warning 6002: The table/view 'GDPDB.dbo.ULP_DEPARTMENTS_VU' does not have a prim
           <Property Name="DEPT_MGR" Type="bigint" />
           <Property Name="DEPT_TYPE" Type="bigint" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'GDPDB.dbo.ULP_EMPLOYEES_VU' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ULP_EMPLOYEES_VU">
-          <Property Name="ID" Type="bigint" />
-          <Property Name="EMP_NO" Type="bigint" />
-          <Property Name="EMP_FIRST_NAME" Type="varchar" MaxLength="50" />
-          <Property Name="EMP_FATHER_NAME" Type="varchar" MaxLength="50" />
-          <Property Name="EMP_GRAND_NAME" Type="varchar" MaxLength="50" />
-          <Property Name="EMP_FAMILY_NAME" Type="varchar" MaxLength="50" />
-          <Property Name="DEPT_NO" Type="bigint" />
-        </EntityType>-->
         <Association Name="FK_CMITS_FIL_PERD_COMMITTEES">
           <End Role="COMMITTEES" Type="Self.COMMITTEES" Multiplicity="1" />
           <End Role="CMITS_FIL_PERD" Type="Self.CMITS_FIL_PERD" Multiplicity="*" />
@@ -1527,8 +1502,7 @@ warning 6013: The table/view 'GDPDB.dbo.ULP_EMPLOYEES_VU' does not have a primar
             <End Role="USERS_SETTINGS" EntitySet="USERS_SETTINGS" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MEFDBM" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1713,7 +1687,7 @@ warning 6013: The table/view 'GDPDB.dbo.ULP_EMPLOYEES_VU' does not have a primar
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EMP_NO" Type="Int64" Nullable="false" />
+          <Property Name="EMP_NO" Type="Int64" />
           <Property Name="EMPLOYEE_FIRST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EMPLOYEE_FATHER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EMPLOYEE_GRAND_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -1729,8 +1703,8 @@ warning 6013: The table/view 'GDPDB.dbo.ULP_EMPLOYEES_VU' does not have a primar
           <Property Name="DIV_ID" Type="Int64" />
           <Property Name="SECTION_ID" Type="Int64" />
           <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="CREATION_USER_ID" Type="Int64" Nullable="false" />
-          <Property Name="CREATION_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CREATION_USER_ID" Type="Int64" />
+          <Property Name="CREATION_DATE" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="FIELD_SERVICE">
           <Key>

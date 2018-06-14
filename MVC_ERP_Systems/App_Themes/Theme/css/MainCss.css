@@ -15,7 +15,7 @@
     }
 
 .mynod {
-    padding: 4px 0 0px 5px;
+    padding: 4px 0 5px;
     margin: 0 2px 0 0;
     font-size: 15px;
     border-radius: 15px;
@@ -31,6 +31,7 @@
 
         .mynod a i {
             font-style: normal;
+            outline: none;
         }
 
     .mynod:hover {
@@ -42,10 +43,6 @@
         .mynod:hover > a {
             text-decoration: none;
         }
-
-    .mynod a i {
-        outline: none;
-    }
 
 .myselectedNod {
     overflow: hidden;
@@ -205,7 +202,6 @@
 
 
 /*Start chkboxss ================================================================================================================================================*/
-
 .chkboxss {
     border: solid 1px #ced5ce;
     border-radius: 50% !important;
@@ -244,18 +240,15 @@
 
 
 /*Start AScontainer ================================================================================================================================================*/
-
-.col-fixed-113{
-    width:113px;
+.col-fixed-113 {
+    width: 113px;
     /*background:red;*/
-    position:fixed;
+    position: fixed;
     /*height:50px;*/
 }
 
-
-
-.col-offset-113{
-  /*background:black;*/
-    padding-left:113px;
+.col-offset-113 {
+    /*background:black;*/
+    padding-left: 113px;
 }
 /*End AScontainer ================================================================================================================================================*/

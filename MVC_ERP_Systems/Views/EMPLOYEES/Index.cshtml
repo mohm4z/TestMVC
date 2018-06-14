@@ -28,48 +28,30 @@
                 </div>
             </div>
 
-            <div class="portlet-body form">
+            <div class="modal-content portlet-body form">
                 <div class="form-body">
                     <div class="form-actions" id="divAddEmp">
-
                         <div class="col-xs-4">
                             <a href="Create" class="btn btn-lg btn-warning" title="اضافة موظف">اضافة موظف</a>
                         </div>
-
                     </div>
                     <br />
-                    <br />
 
-
-
-                    <div class="row srow">
+                    <div class="row">
                         <div class="col-xs-12">
+                            <div class="input-group">
+                                <input type="text" name="txtSearch" placeholder="بحث ... " class="form-control" value="{{totalcount}}" />
 
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <div class="input-group">
-                                    <input type="text" name="txtSearch" placeholder="بحث ... " class="form-control" value="{{totalcount}}" />
-
-                                    <div class="input-group-btn">
-                                        <button onclick="AGetData(); return false;" class="btn btn-primary">
-                                            <i class="glyphicon glyphicon-search"></i>
-                                        </button>
-
-                                    </div>
+                                <div class="input-group-btn">
+                                    <button ng-click="AGetData(); return false;" class="btn btn-primary">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
                                 </div>
                             </div>
-
-
-                            @*<asp:LinkButton ID="btnsharch2" runat="server" CssClass="btn btn-primary" OnClick="btnsharch2_Click">
-                                    <i class="glyphicon glyphicon-search"></i>
-                                    <span>بحث</span>
-                                </asp:LinkButton>*@
                         </div>
                     </div>
 
                     <br />
-                    <br />
-
-
 
                     <div class="row">
                         <div class="col-xs-12">
@@ -135,36 +117,22 @@
 
                                 <tfoot>
                                     <tr>
-                                        <td align="center" colspan="6   ">
-                                            <div class="pull-left">
-                                                <ul uib-pagination total-items="totalcount" ng-change="pagechanged()" items-per-page="itemsPerPage"
-                                                    direction-links="true" ng-model="currentPage" max-size="maxsize" class="pagination"
-                                                    boundary-links="true" rotate="false" num-pages="numPages"></ul>
+                                        <td colspan="6" class="form-inline">
+                                            <ul uib-pagination total-items="totalcount" ng-change="pagechanged()" items-per-page="itemsPerPage" rotate="false"
+                                                ng-model="pageIndex" max-size="maxsize" boundary-links="true" num-pages="numPages"></ul>
 
-                                                @*<pagination total-items="totalcount" ng-change="pagechanged()" items-per-page="itemsPerPage"
-                        direction-links="true" ng-model="currentPage" max-size="maxsize" class="pagination"
-                        boundary-links="true" rotate="false" num-pages="numPages" >
-            </pagination>*@
-                                            </div>
+                                            <a class="btn btn-primary pull-right">الصفحة: {{pageIndex}} / {{numPages}}</a>
 
-                                            <span class="form-group pull-right form-inline">
-                                                <select id="ddlPageSize" class="form-control selector"
-                                                        ng-model="itemsPerPage"
-                                                        data-ng-init="itemsPerPage = '10'"
-                                                        ng-change="changePageSize()">
+                                            <select id="ddlPageSize" class="form-control pull-right"
+                                                    ng-model="itemsPerPage"
+                                                    data-ng-init="itemsPerPage = '10'"
+                                                    ng-change="changePageSize()">
 
-                                                    <option value="5">5</option>
-                                                    <option value="10">10</option>
-                                                    <option value="25">25</option>
-                                                    <option value="50">50</option>
-                                                </select>
-                                                <a class="btn btn-primary">الصفحة: {{currentPage}} / {{numPages}}</a>
-
-                                            </span>
-
-
-                                           
-
+                                                <option value="5">5</option>
+                                                <option value="10">10</option>
+                                                <option value="25">25</option>
+                                                <option value="50">50</option>
+                                            </select>
                                         </td>
                                     </tr>
                                 </tfoot>
@@ -173,33 +141,41 @@
                     </div>
                 </div>
             </div>
-
-            <div id="SEMessage"></div>
         </div>
+
+        <div id="SEMessage" />
     </div>
 </div>
 
 @section scripts{
     <script>
+        $('#SEMessage').hide().removeClass();
+
         var app = angular.module("AngApp", ['ui.bootstrap']);
 
         app.controller("EmpsController", function ($scope, $http) {
 
             $scope.maxsize = 10;
             $scope.totalcount = 0;
-            $scope.currentPage = 1;
+            $scope.pageIndex = 1;
             $scope.itemsPerPage = 10;
 
             $scope.AGetData = function () {
-                $http.get("/EMPLOYEES/GaetData?pageindex=" + $scope.currentPage + "&pagesize=" + $scope.itemsPerPage).then(function (response) {
+                $http.get("/EMPLOYEES/GaetData?pageindex=" + $scope.pageIndex + "&pagesize=" + $scope.itemsPerPage).then(function (response) {
 
                     $scope.EMPLOYEES = response.data.EMPLOYEES;
 
                     $scope.totalcount = response.data.totalcount;
 
+                    // الرساله من النظام
+                    $('#SEMessage').show().addClass('alert alert-info')
+                        .text("تم إحضار البيانات بنجاح");
+
                 }, function (error) {
 
-                    alert('failed');
+                    $('#SEMessage').show().addClass('alert alert-danger')
+                        .text("خطأ في إحظار البيانات");
+
                 });
             }
 
@@ -212,7 +188,7 @@
 
             $scope.changePageSize = function () {
 
-                $scope.currentPage = 1;
+                $scope.pageIndex = 1;
 
                 $scope.AGetData();
             }

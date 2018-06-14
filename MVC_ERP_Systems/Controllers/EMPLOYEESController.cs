@@ -16,12 +16,32 @@ namespace MVC_ERP_Systems.Controllers
         public int totalcount { get; set; }
     }
 
+    public   class StatesAndMaseges
+    {
+        /// 1 = Sucsses, 2 = Failed, 3 = info 
+         public int Status { get; set; }
+         public string SEM { get; set; }
+
+        //public  void dd(int Statusp, string SEMp)
+        //{
+        //    Status = Statusp;
+        //    SEM = SEMp;
+
+        //}
+    }
+
     public class EMPLOYEESController : Controller
     {
         private MEFDBEs db = new MEFDBEs();
 
         // GET: EMPLOYEES
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        // GET: EMPLOYEES
+        public ActionResult Mod()
         {
             return View();
         }
@@ -76,17 +96,31 @@ namespace MVC_ERP_Systems.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,EMP_NO,EMPLOYEE_FIRST_NAME,EMPLOYEE_FATHER_NAME,EMPLOYEE_GRAND_NAME,EMPLOYEE_FAMILY_NAME,FULL_NAME,SOLDIER_NO,IDENTITY_NO,EMP_H_DATE,GENDER,PHONE,PROV_ID,DEPT_ID,DIV_ID,SECTION_ID,EMAIL,CREATION_USER_ID,CREATION_DATE")] EMPLOYEES eMPLOYEES)
+        //[ValidateAntiForgeryToken]
+        public JsonResult Insert(EMPLOYEES eMPLOYEES)
         {
-            if (ModelState.IsValid)
-            {
+            //StatesAndMaseges stat = new StatesAndMaseges();
+
+            string ss = "";
+          
+                //eMPLOYEES.EMP_H_DATE = new DateTime();
+                eMPLOYEES.FULL_NAME = eMPLOYEES.EMPLOYEE_FIRST_NAME;
                 db.EMPLOYEES.Add(eMPLOYEES);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                //return RedirectToAction("Index");
+                //}
+                //stat.Status = 1;
+                //stat.SEM = "تم بنجاج";
 
-            return View(eMPLOYEES);
+
+           
+
+            return Json(ss, JsonRequestBehavior.AllowGet);
+
+
+            //if (ModelState.IsValid)
+            //{
+
         }
 
         // GET: EMPLOYEES/Edit/5

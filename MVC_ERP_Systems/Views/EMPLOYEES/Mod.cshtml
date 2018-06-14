@@ -1,49 +1,199 @@
-﻿
-@{
-    ViewBag.Title = "Mod";
+﻿@{
+    ViewBag.Title = "إدارة ملف الموظفين";
 }
 
-<h2>Mod</h2>
+<div class="page-content-wrapper" ng-app="AngApp">
+    <div class="page-content" ng-controller="EmpsController2">
+        <form>
+
+            <div class="page-bar">
+                <ul class="page-breadcrumb">
+                    <li>
+                        <a href="../../MainForms/Home.aspx">الرئيسية</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+
+                    <li>
+                        <a href="EMPLOYEE.aspx">عرض الموظفين</a>
+                        <i class="fa fa-circle"></i>
+                    </li>
+
+                    <li>
+                        <span>الموظفين</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="portlet box green ">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-empire"></i>الموظفين
+                    </div>
+                </div>
+
+                <div class="modal-content portlet-body form">
+                    <div class="form-body">
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-3">
+                                <div class="form-group">
+                                    <label class="control-label">رقم الموظف :</label>
+                                    <div class="input-icon right">
+                                        <i class="fa fa-info-circle tooltips" data-original-title="الرقم يتم اضافته تلقائيا" data-container="body"></i>
+                                        <input type="text" ng-model="Emp.EMP_NO" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <label class="control-label">الاسم الاول :</label>
+                                <div class="input-icon right">
+                                    <input type="text" ng-model="Emp.EMPLOYEE_FIRST_NAME" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <label class="control-label">الرقم العسكري :</label>
+                                <div class="input-icon right">
+                                    <input type="text" ng-model="Emp.SOLDIER_NO" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <div class="form-group">
+                                    <label class="control-label">رقم السجل المدني :</label>
+                                    <div class="input-icon right">
+                                        <input type="text" ng-model="Emp.IDENTITY_NO" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <label class="control-label">تاريخ التعيين :</label>
+                                <div class="input-icon right">
+                                    <div class="input-group">
+                                        <input type="text" ng-model="Emp.EMP_H_DATE" class="form-control" />
+                                        <span class="input-group-btn">
+                                            <button id="btntxtEmp_H_Date" type="button" class="btn default glyphicon glyphicon-plus" />
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <label class="control-label">الجنس:</label>
+                                <select ng-model="Emp.GENDER" class="form-control">
+                                    <option value="1">ذكر</option>
+                                    <option value="2">أنثى</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+
+                        <img src="/App_Themes/Theme/imgs/ProgPar2.gif" alt="ProgPar" style="width: 100%; height: 5px; border-radius: 15px;" />
+
+                        <div class="form-actions">
+                            <div class="col-xs-12">
+                                <a ng-click="savedata()" class="btn btn-lg btn-warning" title="حفظ">
+                                    <span aria-hidden="true" class="glyphicon glyphicon-floppy-disk" />
+                                    حفظ
+                                </a>
+
+                                <a ng-click="reset()" class="btn btn-lg btn-danger" title="إعادة القيم الإفتراضية">
+                                    <span aria-hidden="true" class="glyphicon glyphicon-refresh" />
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="SEMessage" />
+        </form>
+
+    </div>
+</div>
+
 
 
 @section scripts{
     <script>
-        var app = angular.module("AngApp", []);
+        //$('#SEMessage').hide().removeClass();
 
-        app.controller("EmpsController", function ($scope, $http) {
+        var app = angular.module('AngApp', []);
 
-            $scope.maxsize = 10;
-            $scope.totalcount = 0;
-            $scope.currentPage = 1;
-            $scope.itemsPerPage = 10;
+        app.controller('EmpsController2', function ($scope, $http) {
 
-            $scope.AGetData = function () {
-                $http.get("/EMPLOYEES/GaetData?pageindex=" + $scope.currentPage + "&pagesize=" + $scope.itemsPerPage).then(function (response) {
+            //$scope.btntext = "Save";
 
-                    $scope.EMPLOYEES = response.data.EMPLOYEES;
+            $scope.savedata = function () {
 
-                    $scope.totalcount = response.data.totalcount;
+                //$scope.btntext = "Please wait...!";
 
-                }, function (error) {
+                $http({
+                    method: 'POST',
+                    url: "/EMPLOYEES/Insert",
+                    data: $scope.Emp
+                }).then(function (data) {
 
-                    alert('failed');
+                    alert('Data Submitted...!');
                 });
             }
-
-            $scope.AGetData();
-
-            $scope.pageChanged = function () {
-
-                $scope.AGetData();
-            }
-
-            $scope.changePageSize = function () {
-
-                $scope.currentPage = 1;
-
-                $scope.AGetData();
-            }
         });
+
+
+        //var app = angular.module("AngApp", []);
+
+        //app.controller("EmpsController", function ($scope, $http) {
+
+
+        //    //$scope.btntext = "Save";
+
+        //    $scope.savedata = function () {
+
+        //        //$scope.btntext = "Please wait...!";
+
+        //        $http({
+        //            traditional:true,
+        //            method: "POST",
+        //            url: "/EMPLOYEES/Insert",
+        //            data: $scope.Emp,
+        //            dataType:"Json"
+        //        }).success(function (data) {
+
+        //            alert("ss")
+
+        //            $scope.Emp = null;
+
+        //            if (data.Status == 1) {
+        //                $('#SEMessage').show().addClass('alert alert-success')
+        //                    .text(data.SEM);
+        //            }
+        //            else {
+        //                $('#SEMessage').show().addClass('alert alert-danger')
+        //                    .text(data.SEM);
+        //            }
+
+        //        }).error(function (data) {
+        //            alert("ss")
+
+        //            //$('#SEMessage').show().addClass('alert alert-danger')
+        //            //    .text(data.SEM);
+
+        //        });
+
+        //    };
+
+
+
+        //});
 
     </script>
 }

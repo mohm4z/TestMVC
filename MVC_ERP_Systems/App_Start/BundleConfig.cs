@@ -24,12 +24,12 @@ namespace MVC_ERP_Systems
                 "~/App_Themes/Template/assets/layouts/layout/css/layout-rtl.min.css",
                 "~/App_Themes/Template/assets/layouts/layout/css/themes/darkblue-rtl.min.css",
                 "~/App_Themes/Template/assets/layouts/layout/css/custom-rtl.min.css",
-                "~/App_Themes/Theme/css/MainCss.css",
+                "~/App_Themes/Theme/css/MainCss.css"
                 //"~/App_Themes/Theme/css/animate.css",
 
                 //"~/Content/ui-bootstrap-csp.css"
 
-                "~/App_Themes/Theme/Plugins/Select2/select2.min.css"
+                //"~/App_Themes/Theme/Plugins/Select2/select2.min.css"
                 ));
 
 
@@ -47,13 +47,13 @@ namespace MVC_ERP_Systems
                 "~/App_Themes/Template/assets/layouts/layout/scripts/demo.min.js",
                 "~/App_Themes/Template/assets/layouts/global/scripts/quick-sidebar.min.js",
 
-                "~/Scripts/angular.min.js",
+                "~/Scripts/angular.min.js"
                 //"~/Resource/ui-bootstrap-tpls-0.13.4.min.js"
-                "~/Scripts/angular-ui/ui-bootstrap-tpls.min.js",
+                //"~/Scripts/angular-ui/ui-bootstrap-tpls.min.js",
                 //"~/Scripts/AngApp.js"
             
-                "~/App_Themes/Theme/Plugins/Select2/select2.full.min.js",
-                "~/App_Themes/Theme/Plugins/Select2/select2.min.js"
+                //"~/App_Themes/Theme/Plugins/Select2/select2.full.min.js",
+                //"~/App_Themes/Theme/Plugins/Select2/select2.min.js"
            ));
         }
     }
