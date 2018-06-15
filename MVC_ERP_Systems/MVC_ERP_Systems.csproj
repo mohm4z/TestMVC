@@ -5140,6 +5140,7 @@
     <Content Include="App_Themes\Theme\css\animate.css" />
     <Content Include="App_Themes\Theme\css\MainCss.css" />
     <Content Include="App_Themes\Theme\imgs\ProgPar2.gif" />
+    <Content Include="App_Themes\Theme\js\Sharedjs.js" />
     <Content Include="App_Themes\Theme\Plugins\Select2\select2.full.min.js" />
     <Content Include="App_Themes\Theme\Plugins\Select2\select2.min.css" />
     <Content Include="App_Themes\Theme\Plugins\Select2\select2.min.js" />
@@ -5362,7 +5363,7 @@
       <DependentUpon>MEFDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Shared\Classes\TvisFunc.cs" />
+    <Compile Include="Shared\Classes\SharedFuncs.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

@@ -21,11 +21,25 @@ using PdfSharp.Pdf.IO;
 
 namespace MVC_ERP_Systems.SharedClasses
 {
+    public struct SMessage
+    {
+        /// success, warning, info, danger
+        public string Stat { get; set; }
+        public string SEM { get; set; }
+
+    }
+
+
+
     /// <summary>
     /// Main class for Functions 
     /// </summary>
-    public class TvisFunc
+    public class SFncs
     {
+        public static List<SMessage> lom = new List<SMessage>();
+        //public  List<MessageSt> LOM = new List<MessageSt>();
+
+
 
         #region Enumerables
 

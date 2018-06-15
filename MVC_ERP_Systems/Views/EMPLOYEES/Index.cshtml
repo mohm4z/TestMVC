@@ -5,7 +5,7 @@
 }
 
 
-<div class="page-content-wrapper" ng-app="AngApp">
+<div class="page-content-wrapper" >
     <div class="page-content" ng-controller="EmpsController">
         <div class="page-bar">
             <ul class="page-breadcrumb">
@@ -149,11 +149,8 @@
 
 @section scripts{
     <script>
-        $('#SEMessage').hide().removeClass();
 
-        var app = angular.module("AngApp", ['ui.bootstrap']);
-
-        app.controller("EmpsController", function ($scope, $http) {
+        appWithUi.controller("EmpsController", function ($scope, $http) {
 
             $scope.maxsize = 10;
             $scope.totalcount = 0;

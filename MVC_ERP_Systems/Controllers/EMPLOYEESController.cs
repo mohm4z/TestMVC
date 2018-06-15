@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVC_ERP_Systems.Models;
+using MVC_ERP_Systems.SharedClasses;
 
 namespace MVC_ERP_Systems.Controllers
 {
@@ -16,22 +17,15 @@ namespace MVC_ERP_Systems.Controllers
         public int totalcount { get; set; }
     }
 
-    public class LOM
-    {
-        /// success, warning, info, danger
-        public string Stat { get; set; }
-        public string SEM { get; set; }
-
-        //public  void dd(int Statusp, string SEMp)
-        //{
-        //    Status = Statusp;
-        //    SEM = SEMp;
-
-        //}
-    }
+    
 
     public class EMPLOYEESController : Controller
     {
+        public EMPLOYEESController()
+        {
+            SFncs.lom.Clear();
+        }
+
         private MEFDBEs db = new MEFDBEs();
 
         // GET: EMPLOYEES
@@ -99,20 +93,23 @@ namespace MVC_ERP_Systems.Controllers
         //[ValidateAntiForgeryToken]
         public JsonResult Insert(EMPLOYEES eMPLOYEES)
         {
-            List<LOM> lom = new List<LOM>();
+            try
+            {
+                //eMPLOYEES.EMP_H_DATE = new DateTime();
+                eMPLOYEES.FULL_NAME = eMPLOYEES.EMPLOYEE_FIRST_NAME;
+                db.EMPLOYEES.Add(eMPLOYEES);
+                db.SaveChanges();
 
+                SFncs.lom.Add(new SMessage { Stat = "success", SEM = "تم بنجاج" });
+                SFncs.lom.Add(new SMessage { Stat = "success", SEM = "تم بنجاج" });
 
-            //eMPLOYEES.EMP_H_DATE = new DateTime();
-            eMPLOYEES.FULL_NAME = eMPLOYEES.EMPLOYEE_FIRST_NAME;
-            db.EMPLOYEES.Add(eMPLOYEES);
-            db.SaveChanges();
-         
+            }
+            catch (Exception ex)
+            {
+                SFncs.lom.Add(new SMessage { Stat = "warning", SEM = ex.Message });
+            }
 
-            lom.Add(new LOM { Stat = "success", SEM = "تم بنجاج" });
-            lom.Add(new LOM { Stat = "warning", SEM = "لم يتم" });
-
-
-            return Json(lom.ToList(), JsonRequestBehavior.AllowGet);
+            return Json(SFncs.lom, JsonRequestBehavior.AllowGet);
         }
 
         // GET: EMPLOYEES/Edit/5

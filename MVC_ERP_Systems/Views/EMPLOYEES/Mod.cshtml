@@ -2,7 +2,7 @@
     ViewBag.Title = "إدارة ملف الموظفين";
 }
 
-<div class="page-content-wrapper" ng-app="AngApp">
+<div class="page-content-wrapper">
     <div class="page-content" ng-controller="EmpsController2">
         <form>
 
@@ -115,7 +115,7 @@
                 </div>
             </div>
 
-            <div id="SEMessage" class="alert-error"></div>
+            <div id="SEMessage"></div>
         </form>
 
     </div>
@@ -125,16 +125,6 @@
 
 @section scripts{
     <script>
-        $('#SEMessage').empty().hide();
-
-        function ShowSMEs(o, m) {
-            o.show();
-
-            angular.forEach(m, function (value, key) {
-                o.append("<div class='alert alert-" + value.Stat + "'>" + value.SEM + "</div>");
-            });
-        };
-
         var app = angular.module('AngApp', []);
 
         app.controller('EmpsController2', function ($scope, $http) {
@@ -151,7 +141,7 @@
                     data: $scope.Emp
                 }).then(function (om) {
 
-                   
+
                     //angular.forEach(data, function (item, index) {
                     //    alert(item['SEM']);
                     //});
